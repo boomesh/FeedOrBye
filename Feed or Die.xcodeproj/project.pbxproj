@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		8D67AFB21CD2402000476A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67AFB11CD2402000476A7D /* AppDelegate.swift */; };
-		8D67AFB41CD2402000476A7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67AFB31CD2402000476A7D /* ViewController.swift */; };
+		8D67AFB41CD2402000476A7D /* PetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67AFB31CD2402000476A7D /* PetListViewController.swift */; };
 		8D67AFB71CD2402000476A7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D67AFB51CD2402000476A7D /* Main.storyboard */; };
 		8D67AFB91CD2402000476A7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D67AFB81CD2402000476A7D /* Assets.xcassets */; };
 		8D67AFBC1CD2402000476A7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D67AFBA1CD2402000476A7D /* LaunchScreen.storyboard */; };
 		8D67AFC71CD2402000476A7D /* Feed_or_DieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67AFC61CD2402000476A7D /* Feed_or_DieTests.swift */; };
 		8D67AFD21CD2402000476A7D /* Feed_or_DieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67AFD11CD2402000476A7D /* Feed_or_DieUITests.swift */; };
+		8D67AFE51CD2434500476A7D /* PetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67AFE41CD2434500476A7D /* PetDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,7 @@
 /* Begin PBXFileReference section */
 		8D67AFAE1CD2402000476A7D /* Feed or Die.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Feed or Die.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D67AFB11CD2402000476A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8D67AFB31CD2402000476A7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8D67AFB31CD2402000476A7D /* PetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListViewController.swift; sourceTree = "<group>"; };
 		8D67AFB61CD2402000476A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D67AFB81CD2402000476A7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D67AFBB1CD2402000476A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +48,7 @@
 		8D67AFCD1CD2402000476A7D /* Feed or DieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Feed or DieUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D67AFD11CD2402000476A7D /* Feed_or_DieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed_or_DieUITests.swift; sourceTree = "<group>"; };
 		8D67AFD31CD2402000476A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D67AFE41CD2434500476A7D /* PetDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PetDetailsViewController.swift; path = Pets/Details/PetDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				8D67AFB11CD2402000476A7D /* AppDelegate.swift */,
-				8D67AFB31CD2402000476A7D /* ViewController.swift */,
-				8D67AFB51CD2402000476A7D /* Main.storyboard */,
+				8D67AFDF1CD2426400476A7D /* Pets */,
 				8D67AFB81CD2402000476A7D /* Assets.xcassets */,
 				8D67AFBA1CD2402000476A7D /* LaunchScreen.storyboard */,
 				8D67AFBD1CD2402000476A7D /* Info.plist */,
@@ -123,6 +124,32 @@
 				8D67AFD31CD2402000476A7D /* Info.plist */,
 			);
 			path = "Feed or DieUITests";
+			sourceTree = "<group>";
+		};
+		8D67AFDF1CD2426400476A7D /* Pets */ = {
+			isa = PBXGroup;
+			children = (
+				8D67AFE11CD242FF00476A7D /* Models */,
+				8D67AFE01CD242E700476A7D /* Details */,
+				8D67AFB31CD2402000476A7D /* PetListViewController.swift */,
+				8D67AFB51CD2402000476A7D /* Main.storyboard */,
+			);
+			name = Pets;
+			sourceTree = "<group>";
+		};
+		8D67AFE01CD242E700476A7D /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				8D67AFE41CD2434500476A7D /* PetDetailsViewController.swift */,
+			);
+			name = Details;
+			sourceTree = "<group>";
+		};
+		8D67AFE11CD242FF00476A7D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +283,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D67AFB41CD2402000476A7D /* ViewController.swift in Sources */,
+				8D67AFB41CD2402000476A7D /* PetListViewController.swift in Sources */,
+				8D67AFE51CD2434500476A7D /* PetDetailsViewController.swift in Sources */,
 				8D67AFB21CD2402000476A7D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +512,7 @@
 				8D67AFD81CD2402000476A7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8D67AFD91CD2402000476A7D /* Build configuration list for PBXNativeTarget "Feed or DieTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +521,7 @@
 				8D67AFDB1CD2402000476A7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8D67AFDC1CD2402000476A7D /* Build configuration list for PBXNativeTarget "Feed or DieUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +530,7 @@
 				8D67AFDE1CD2402000476A7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
