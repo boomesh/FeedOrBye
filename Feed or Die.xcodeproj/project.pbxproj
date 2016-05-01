@@ -15,6 +15,15 @@
 		8D67AFC71CD2402000476A7D /* Feed_or_DieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67AFC61CD2402000476A7D /* Feed_or_DieTests.swift */; };
 		8D67AFD21CD2402000476A7D /* Feed_or_DieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67AFD11CD2402000476A7D /* Feed_or_DieUITests.swift */; };
 		8D67AFE51CD2434500476A7D /* PetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D67AFE41CD2434500476A7D /* PetDetailsViewController.swift */; };
+		8DEDB7D51CD667E400C9188E /* PetList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DEDB7D41CD667E400C9188E /* PetList.storyboard */; };
+		8DEDB7D61CD667E400C9188E /* PetList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DEDB7D41CD667E400C9188E /* PetList.storyboard */; };
+		8DEDB7D71CD667E400C9188E /* PetList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DEDB7D41CD667E400C9188E /* PetList.storyboard */; };
+		8DEDB7DA1CD66CBF00C9188E /* PetListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEDB7D91CD66CBF00C9188E /* PetListItemTableViewCell.swift */; };
+		8DEDB7DB1CD66CBF00C9188E /* PetListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEDB7D91CD66CBF00C9188E /* PetListItemTableViewCell.swift */; };
+		8DEDB7DC1CD66CBF00C9188E /* PetListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEDB7D91CD66CBF00C9188E /* PetListItemTableViewCell.swift */; };
+		8DEDB7DF1CD690DA00C9188E /* PetDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DEDB7DE1CD690DA00C9188E /* PetDetails.storyboard */; };
+		8DEDB7E01CD690DA00C9188E /* PetDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DEDB7DE1CD690DA00C9188E /* PetDetails.storyboard */; };
+		8DEDB7E11CD690DA00C9188E /* PetDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DEDB7DE1CD690DA00C9188E /* PetDetails.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +58,9 @@
 		8D67AFD11CD2402000476A7D /* Feed_or_DieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed_or_DieUITests.swift; sourceTree = "<group>"; };
 		8D67AFD31CD2402000476A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D67AFE41CD2434500476A7D /* PetDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PetDetailsViewController.swift; path = Pets/Details/PetDetailsViewController.swift; sourceTree = "<group>"; };
+		8DEDB7D41CD667E400C9188E /* PetList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PetList.storyboard; path = Pets/List/PetList.storyboard; sourceTree = "<group>"; };
+		8DEDB7D91CD66CBF00C9188E /* PetListItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetListItemTableViewCell.swift; sourceTree = "<group>"; };
+		8DEDB7DE1CD690DA00C9188E /* PetDetails.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PetDetails.storyboard; path = Pets/Details/PetDetails.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				8D67AFB11CD2402000476A7D /* AppDelegate.swift */,
+				8DEDB7DD1CD670AE00C9188E /* Base */,
 				8D67AFDF1CD2426400476A7D /* Pets */,
 				8D67AFB81CD2402000476A7D /* Assets.xcassets */,
 				8D67AFBA1CD2402000476A7D /* LaunchScreen.storyboard */,
@@ -131,7 +144,7 @@
 			children = (
 				8D67AFE11CD242FF00476A7D /* Models */,
 				8D67AFE01CD242E700476A7D /* Details */,
-				8D67AFB31CD2402000476A7D /* PetListViewController.swift */,
+				8DEDB7D31CD667A800C9188E /* List */,
 				8D67AFB51CD2402000476A7D /* Main.storyboard */,
 			);
 			name = Pets;
@@ -141,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				8D67AFE41CD2434500476A7D /* PetDetailsViewController.swift */,
+				8DEDB7DE1CD690DA00C9188E /* PetDetails.storyboard */,
 			);
 			name = Details;
 			sourceTree = "<group>";
@@ -150,6 +164,31 @@
 			children = (
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		8DEDB7D31CD667A800C9188E /* List */ = {
+			isa = PBXGroup;
+			children = (
+				8DEDB7D81CD66C9C00C9188E /* Cell */,
+				8D67AFB31CD2402000476A7D /* PetListViewController.swift */,
+				8DEDB7D41CD667E400C9188E /* PetList.storyboard */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		8DEDB7D81CD66C9C00C9188E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8DEDB7D91CD66CBF00C9188E /* PetListItemTableViewCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		8DEDB7DD1CD670AE00C9188E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +297,8 @@
 			files = (
 				8D67AFBC1CD2402000476A7D /* LaunchScreen.storyboard in Resources */,
 				8D67AFB91CD2402000476A7D /* Assets.xcassets in Resources */,
+				8DEDB7DF1CD690DA00C9188E /* PetDetails.storyboard in Resources */,
+				8DEDB7D51CD667E400C9188E /* PetList.storyboard in Resources */,
 				8D67AFB71CD2402000476A7D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,6 +307,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DEDB7D61CD667E400C9188E /* PetList.storyboard in Resources */,
+				8DEDB7E01CD690DA00C9188E /* PetDetails.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +316,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DEDB7D71CD667E400C9188E /* PetList.storyboard in Resources */,
+				8DEDB7E11CD690DA00C9188E /* PetDetails.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DEDB7DA1CD66CBF00C9188E /* PetListItemTableViewCell.swift in Sources */,
 				8D67AFB41CD2402000476A7D /* PetListViewController.swift in Sources */,
 				8D67AFE51CD2434500476A7D /* PetDetailsViewController.swift in Sources */,
 				8D67AFB21CD2402000476A7D /* AppDelegate.swift in Sources */,
@@ -293,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DEDB7DB1CD66CBF00C9188E /* PetListItemTableViewCell.swift in Sources */,
 				8D67AFC71CD2402000476A7D /* Feed_or_DieTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,6 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DEDB7DC1CD66CBF00C9188E /* PetListItemTableViewCell.swift in Sources */,
 				8D67AFD21CD2402000476A7D /* Feed_or_DieUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
