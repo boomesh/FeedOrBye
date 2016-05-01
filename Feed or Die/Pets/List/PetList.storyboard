@@ -6,10 +6,10 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Pet List View Controller-->
+        <!--Pets-->
         <scene sceneID="YwA-3R-eIn">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="w9m-W4-7ec" customClass="PetListViewController" customModule="Feed_or_Die" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Pets" automaticallyAdjustsScrollViewInsets="NO" id="w9m-W4-7ec" customClass="PetListViewController" customModule="Feed_or_Die" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1GU-uB-eak"/>
                         <viewControllerLayoutGuide type="bottom" id="8NZ-Ze-Sy2"/>
@@ -22,11 +22,11 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pet_list_item" id="eJR-Su-6FR" customClass="PetListItemTableViewCell" customModule="Feed_or_Die" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pet_list_item" id="eJR-Su-6FR" customClass="PetListItemTableViewCell" customModule="Feed_or_Die" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eJR-Su-6FR" id="gVL-Vd-VI0">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="87"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="87"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="T6r-b4-6TB">
@@ -35,7 +35,7 @@
                                                         <constraint firstAttribute="width" secondItem="T6r-b4-6TB" secondAttribute="height" multiplier="1:1" id="bBB-U7-Jdg"/>
                                                     </constraints>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zfS-uo-pQ8">
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zfS-uo-pQ8">
                                                     <rect key="frame" x="95" y="23" width="497" height="41"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPb-IB-kPq">
@@ -74,7 +74,7 @@
                                             <outlet property="avatarImageView" destination="T6r-b4-6TB" id="5bT-4d-dE9"/>
                                             <outlet property="detailLabel" destination="rFP-2Y-ePs" id="s01-20-KM7"/>
                                             <outlet property="titleLabel" destination="hPb-IB-kPq" id="eYq-E1-hFh"/>
-                                            <segue destination="2D0-Tp-o6P" kind="showDetail" id="bXE-3O-sgq"/>
+                                            <segue destination="1SE-qp-o7l" kind="show" id="8Ae-02-eke"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -100,13 +100,24 @@
             </objects>
             <point key="canvasLocation" x="548" y="146"/>
         </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="KZ3-NF-gjS">
+        <!--Pet Details View Controller-->
+        <scene sceneID="00F-ev-1Uy">
             <objects>
-                <viewControllerPlaceholder id="2D0-Tp-o6P" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6oT-Ex-rsD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="1SE-qp-o7l" customClass="PetDetailsViewController" customModule="Feed_or_Die" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1y1-WJ-SWO"/>
+                        <viewControllerLayoutGuide type="bottom" id="FuF-GX-GfY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5sZ-6J-4wV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hbV-Al-THQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yzm-5I-iwc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1128.5" y="146"/>
+            <point key="canvasLocation" x="1303" y="146"/>
         </scene>
     </scenes>
     <resources>

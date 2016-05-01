@@ -12,8 +12,12 @@ class PetListViewController: UIViewController, UITableViewDelegate, UITableViewD
     // MARK:- IBOutlets
     @IBOutlet weak var petsTableView: UITableView!
 
-    // MARK:- private methods
-    let titles: Array<String> = ["Dog"]
+    // MARK:- private vars
+    let pets: Array<Pet> = [
+        Pet(name: "Dogface", breed: "German Dog"),
+        Pet(name: "Catface", breed: "Siamese Dog"),
+        Pet(name: "Fishface", breed: "Aqua Dog")
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +26,7 @@ class PetListViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     // MARK:- <UITableViewDataSource>
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titles.count
+        return pets.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -36,8 +40,18 @@ class PetListViewController: UIViewController, UITableViewDelegate, UITableViewD
         let row: Int = indexPath.row
         
         if let cell: PetListItemTableViewCell = cell as? PetListItemTableViewCell {
-            cell.title = titles[row]
-            cell.detail = titles[row]
+            cell.title = pets[row].name
+            cell.detail = pets[row].breed
+        }
+    }
+    
+    // MARK:- <UIViewController> methods
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let vc : UIViewController = segue.destinationViewController
+        
+        if let vc : PetDetailsViewController = vc as? PetDetailsViewController {
+            let row : Int = self.petsTableView.indexPathForSelectedRow!.row
+            vc.pet = pets[row]
         }
     }
 }

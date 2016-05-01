@@ -9,5 +9,11 @@
 import UIKit
 
 class PetDetailsViewController: UIViewController {
-
+    var pet:Pet!
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.title = pet.name
+    }
+    
 }
