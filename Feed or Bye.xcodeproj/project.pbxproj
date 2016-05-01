@@ -44,17 +44,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8D67AFAE1CD2402000476A7D /* Feed or Die.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Feed or Die.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D67AFAE1CD2402000476A7D /* Feed or Bye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Feed or Bye.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D67AFB11CD2402000476A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D67AFB31CD2402000476A7D /* PetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListViewController.swift; sourceTree = "<group>"; };
 		8D67AFB61CD2402000476A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D67AFB81CD2402000476A7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D67AFBB1CD2402000476A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8D67AFBD1CD2402000476A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D67AFC21CD2402000476A7D /* Feed or DieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Feed or DieTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D67AFC21CD2402000476A7D /* Feed or Bye.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Feed or Bye.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D67AFC61CD2402000476A7D /* Feed_or_DieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed_or_DieTests.swift; sourceTree = "<group>"; };
 		8D67AFC81CD2402000476A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8D67AFCD1CD2402000476A7D /* Feed or DieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Feed or DieUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D67AFCD1CD2402000476A7D /* Feed or Bye.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Feed or Bye.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D67AFD11CD2402000476A7D /* Feed_or_DieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed_or_DieUITests.swift; sourceTree = "<group>"; };
 		8D67AFD31CD2402000476A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D67AFE41CD2434500476A7D /* PetDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PetDetailsViewController.swift; path = Pets/Details/PetDetailsViewController.swift; sourceTree = "<group>"; };
@@ -91,9 +91,9 @@
 		8D67AFA51CD2402000476A7D = {
 			isa = PBXGroup;
 			children = (
-				8D67AFB01CD2402000476A7D /* Feed or Die App */,
-				8D67AFC51CD2402000476A7D /* Feed or DieTests */,
-				8D67AFD01CD2402000476A7D /* Feed or DieUITests */,
+				8D67AFB01CD2402000476A7D /* Feed or Bye App */,
+				8D67AFC51CD2402000476A7D /* Feed or Bye Tests */,
+				8D67AFD01CD2402000476A7D /* Feed or Bye UITests */,
 				8D67AFAF1CD2402000476A7D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,14 +101,14 @@
 		8D67AFAF1CD2402000476A7D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D67AFAE1CD2402000476A7D /* Feed or Die.app */,
-				8D67AFC21CD2402000476A7D /* Feed or DieTests.xctest */,
-				8D67AFCD1CD2402000476A7D /* Feed or DieUITests.xctest */,
+				8D67AFAE1CD2402000476A7D /* Feed or Bye.app */,
+				8D67AFC21CD2402000476A7D /* Feed or Bye.xctest */,
+				8D67AFCD1CD2402000476A7D /* Feed or Bye.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8D67AFB01CD2402000476A7D /* Feed or Die App */ = {
+		8D67AFB01CD2402000476A7D /* Feed or Bye App */ = {
 			isa = PBXGroup;
 			children = (
 				8D67AFB11CD2402000476A7D /* AppDelegate.swift */,
@@ -118,25 +118,27 @@
 				8D67AFBA1CD2402000476A7D /* LaunchScreen.storyboard */,
 				8D67AFBD1CD2402000476A7D /* Info.plist */,
 			);
-			name = "Feed or Die App";
+			name = "Feed or Bye App";
 			path = "Feed or Die";
 			sourceTree = "<group>";
 		};
-		8D67AFC51CD2402000476A7D /* Feed or DieTests */ = {
+		8D67AFC51CD2402000476A7D /* Feed or Bye Tests */ = {
 			isa = PBXGroup;
 			children = (
 				8D67AFC61CD2402000476A7D /* Feed_or_DieTests.swift */,
 				8D67AFC81CD2402000476A7D /* Info.plist */,
 			);
+			name = "Feed or Bye Tests";
 			path = "Feed or DieTests";
 			sourceTree = "<group>";
 		};
-		8D67AFD01CD2402000476A7D /* Feed or DieUITests */ = {
+		8D67AFD01CD2402000476A7D /* Feed or Bye UITests */ = {
 			isa = PBXGroup;
 			children = (
 				8D67AFD11CD2402000476A7D /* Feed_or_DieUITests.swift */,
 				8D67AFD31CD2402000476A7D /* Info.plist */,
 			);
+			name = "Feed or Bye UITests";
 			path = "Feed or DieUITests";
 			sourceTree = "<group>";
 		};
@@ -195,9 +197,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D67AFAD1CD2402000476A7D /* Feed or Die */ = {
+		8D67AFAD1CD2402000476A7D /* Feed or Bye */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8D67AFD61CD2402000476A7D /* Build configuration list for PBXNativeTarget "Feed or Die" */;
+			buildConfigurationList = 8D67AFD61CD2402000476A7D /* Build configuration list for PBXNativeTarget "Feed or Bye" */;
 			buildPhases = (
 				8D67AFAA1CD2402000476A7D /* Sources */,
 				8D67AFAB1CD2402000476A7D /* Frameworks */,
@@ -207,14 +209,14 @@
 			);
 			dependencies = (
 			);
-			name = "Feed or Die";
+			name = "Feed or Bye";
 			productName = "Feed or Die";
-			productReference = 8D67AFAE1CD2402000476A7D /* Feed or Die.app */;
+			productReference = 8D67AFAE1CD2402000476A7D /* Feed or Bye.app */;
 			productType = "com.apple.product-type.application";
 		};
-		8D67AFC11CD2402000476A7D /* Feed or DieTests */ = {
+		8D67AFC11CD2402000476A7D /* Feed or ByeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8D67AFD91CD2402000476A7D /* Build configuration list for PBXNativeTarget "Feed or DieTests" */;
+			buildConfigurationList = 8D67AFD91CD2402000476A7D /* Build configuration list for PBXNativeTarget "Feed or ByeTests" */;
 			buildPhases = (
 				8D67AFBE1CD2402000476A7D /* Sources */,
 				8D67AFBF1CD2402000476A7D /* Frameworks */,
@@ -225,14 +227,14 @@
 			dependencies = (
 				8D67AFC41CD2402000476A7D /* PBXTargetDependency */,
 			);
-			name = "Feed or DieTests";
+			name = "Feed or ByeTests";
 			productName = "Feed or DieTests";
-			productReference = 8D67AFC21CD2402000476A7D /* Feed or DieTests.xctest */;
+			productReference = 8D67AFC21CD2402000476A7D /* Feed or Bye.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		8D67AFCC1CD2402000476A7D /* Feed or DieUITests */ = {
+		8D67AFCC1CD2402000476A7D /* Feed or ByeUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8D67AFDC1CD2402000476A7D /* Build configuration list for PBXNativeTarget "Feed or DieUITests" */;
+			buildConfigurationList = 8D67AFDC1CD2402000476A7D /* Build configuration list for PBXNativeTarget "Feed or ByeUITests" */;
 			buildPhases = (
 				8D67AFC91CD2402000476A7D /* Sources */,
 				8D67AFCA1CD2402000476A7D /* Frameworks */,
@@ -243,9 +245,9 @@
 			dependencies = (
 				8D67AFCF1CD2402000476A7D /* PBXTargetDependency */,
 			);
-			name = "Feed or DieUITests";
+			name = "Feed or ByeUITests";
 			productName = "Feed or DieUITests";
-			productReference = 8D67AFCD1CD2402000476A7D /* Feed or DieUITests.xctest */;
+			productReference = 8D67AFCD1CD2402000476A7D /* Feed or Bye.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -271,7 +273,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8D67AFA91CD2402000476A7D /* Build configuration list for PBXProject "Feed or Die" */;
+			buildConfigurationList = 8D67AFA91CD2402000476A7D /* Build configuration list for PBXProject "Feed or Bye" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -284,9 +286,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D67AFAD1CD2402000476A7D /* Feed or Die */,
-				8D67AFC11CD2402000476A7D /* Feed or DieTests */,
-				8D67AFCC1CD2402000476A7D /* Feed or DieUITests */,
+				8D67AFAD1CD2402000476A7D /* Feed or Bye */,
+				8D67AFC11CD2402000476A7D /* Feed or ByeTests */,
+				8D67AFCC1CD2402000476A7D /* Feed or ByeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -359,12 +361,12 @@
 /* Begin PBXTargetDependency section */
 		8D67AFC41CD2402000476A7D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8D67AFAD1CD2402000476A7D /* Feed or Die */;
+			target = 8D67AFAD1CD2402000476A7D /* Feed or Bye */;
 			targetProxy = 8D67AFC31CD2402000476A7D /* PBXContainerItemProxy */;
 		};
 		8D67AFCF1CD2402000476A7D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8D67AFAD1CD2402000476A7D /* Feed or Die */;
+			target = 8D67AFAD1CD2402000476A7D /* Feed or Bye */;
 			targetProxy = 8D67AFCE1CD2402000476A7D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -480,8 +482,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Feed or Die/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.boomesh.Feed-or-Die";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.boomesh.Feed-or-Bye";
+				PRODUCT_NAME = "Feed or Bye";
 			};
 			name = Debug;
 		};
@@ -491,8 +493,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Feed or Die/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.boomesh.Feed-or-Die";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.boomesh.Feed-or-Bye";
+				PRODUCT_NAME = "Feed or Bye";
 			};
 			name = Release;
 		};
@@ -503,8 +505,8 @@
 				INFOPLIST_FILE = "Feed or DieTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.boomesh.Feed-or-DieTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Feed or Die.app/Feed or Die";
+				PRODUCT_NAME = "Feed or Bye";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Feed or Bye.app/Feed or Bye";
 			};
 			name = Debug;
 		};
@@ -515,8 +517,8 @@
 				INFOPLIST_FILE = "Feed or DieTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.boomesh.Feed-or-DieTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Feed or Die.app/Feed or Die";
+				PRODUCT_NAME = "Feed or Bye";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Feed or Bye.app/Feed or Bye";
 			};
 			name = Release;
 		};
@@ -526,7 +528,7 @@
 				INFOPLIST_FILE = "Feed or DieUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.boomesh.Feed-or-DieUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Feed or Bye";
 				TEST_TARGET_NAME = "Feed or Die";
 			};
 			name = Debug;
@@ -537,7 +539,7 @@
 				INFOPLIST_FILE = "Feed or DieUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.boomesh.Feed-or-DieUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Feed or Bye";
 				TEST_TARGET_NAME = "Feed or Die";
 			};
 			name = Release;
@@ -545,7 +547,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8D67AFA91CD2402000476A7D /* Build configuration list for PBXProject "Feed or Die" */ = {
+		8D67AFA91CD2402000476A7D /* Build configuration list for PBXProject "Feed or Bye" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8D67AFD41CD2402000476A7D /* Debug */,
@@ -554,7 +556,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8D67AFD61CD2402000476A7D /* Build configuration list for PBXNativeTarget "Feed or Die" */ = {
+		8D67AFD61CD2402000476A7D /* Build configuration list for PBXNativeTarget "Feed or Bye" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8D67AFD71CD2402000476A7D /* Debug */,
@@ -563,7 +565,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8D67AFD91CD2402000476A7D /* Build configuration list for PBXNativeTarget "Feed or DieTests" */ = {
+		8D67AFD91CD2402000476A7D /* Build configuration list for PBXNativeTarget "Feed or ByeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8D67AFDA1CD2402000476A7D /* Debug */,
@@ -572,7 +574,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8D67AFDC1CD2402000476A7D /* Build configuration list for PBXNativeTarget "Feed or DieUITests" */ = {
+		8D67AFDC1CD2402000476A7D /* Build configuration list for PBXNativeTarget "Feed or ByeUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8D67AFDD1CD2402000476A7D /* Debug */,
