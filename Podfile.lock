@@ -1,1 +1,14 @@
+PODS:
+  - FOBKit (0.1.0)
+
+DEPENDENCIES:
+  - FOBKit (from `FOBKit/`)
+
+EXTERNAL SOURCES:
+  FOBKit:
+    :path: FOBKit/
+
+SPEC CHECKSUMS:
+  FOBKit: 413854e3019acbda293491a618bce3bcadbd048e
+
 COCOAPODS: 0.39.0
