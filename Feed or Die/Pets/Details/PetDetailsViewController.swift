@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import FOBKit
 
 class PetDetailsViewController: UIViewController {
-    var pet:Pet!
+    var pet:FOBPet!
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)

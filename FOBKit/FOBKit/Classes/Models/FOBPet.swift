@@ -8,9 +8,12 @@
 
 import Foundation
 
-class FOBPet {
-    var name:String!
-    init(name:String? = "No Name") {
+public class FOBPet {
+    public var name:String!
+    public var breed:String!
+    
+    public init(name:String? = "No Name", breed:String? = "Unknown Breed") {
         self.name = name
+        self.breed = breed
     }
 }

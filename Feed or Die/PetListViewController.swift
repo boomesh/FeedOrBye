@@ -7,26 +7,23 @@
 //
 
 import UIKit
+import FOBKit
 
 class PetListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // MARK:- IBOutlets
     @IBOutlet weak var petsTableView: UITableView!
-
-    // MARK:- private vars
-    let pets: Array<Pet> = [
-        Pet(name: "Dogface", breed: "German Dog"),
-        Pet(name: "Catface", breed: "Siamese Dog"),
-        Pet(name: "Fishface", breed: "Aqua Dog")
-    ]
+    
+    // MARK:- Life cycle methods
+    var pets:Array<FOBPet>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
     
     // MARK:- <UITableViewDataSource>
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return pets.count
+        return self.pets?.count ?? 0
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -39,19 +36,32 @@ class PetListViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         let row: Int = indexPath.row
         
+        guard let pet:FOBPet = pets?[row] else {
+            return;
+        }
+        
         if let cell: PetListItemTableViewCell = cell as? PetListItemTableViewCell {
-            cell.title = pets[row].name
-            cell.detail = pets[row].breed
+            cell.title = pet.name
+            cell.detail = pet.breed
         }
     }
     
     // MARK:- <UIViewController> methods
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let vc : UIViewController = segue.destinationViewController
+        guard let row:Int = self.petsTableView.indexPathForSelectedRow?.row else {
+            return
+        }
+        
+        guard let pet:FOBPet = pets?[row] else {
+            return
+        }
+        
+        guard let vc : UIViewController = segue.destinationViewController else {
+            return
+        }
         
         if let vc : PetDetailsViewController = vc as? PetDetailsViewController {
-            let row : Int = self.petsTableView.indexPathForSelectedRow!.row
-            vc.pet = pets[row]
+            vc.pet = pet
         }
     }
 }

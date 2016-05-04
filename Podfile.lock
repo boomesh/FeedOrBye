@@ -1,7 +1,9 @@
 PODS:
+  - Alamofire (3.3.1)
   - FOBKit (0.1.0)
 
 DEPENDENCIES:
+  - Alamofire
   - FOBKit (from `FOBKit/`)
 
 EXTERNAL SOURCES:
@@ -9,6 +11,7 @@ EXTERNAL SOURCES:
     :path: FOBKit/
 
 SPEC CHECKSUMS:
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
   FOBKit: 413854e3019acbda293491a618bce3bcadbd048e
 
 COCOAPODS: 0.39.0
