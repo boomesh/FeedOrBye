@@ -11,9 +11,14 @@ import Foundation
 private let listOfPets: Array<FOBPet> = [
     FOBPet(name: "Dogface", breed: "German Dog"),
     FOBPet(name: "Catface", breed: "Siamese Dog"),
-    FOBPet(name: "Fishface", breed: "Aqua Dog")
+    FOBPet(name: "Fishface", breed: "Aqua Dog"),
+    FOBPet(breed: "pure evil"),
+    FOBPet(name: "Gimpy1"),
+    FOBPet(name: "Gimpy2"),
+    FOBPet(name: "Gimpy3"),
+    FOBPet(name: "Gimpy4"),
 ]
 
-func fetchPets(callback:((pets:Array<FOBPet>) -> ())?) {
+public func fetchPets(callback:((pets:Array<FOBPet>) -> Void)?) {
     callback?(pets: listOfPets)
 }

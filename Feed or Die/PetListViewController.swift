@@ -8,6 +8,7 @@
 
 import UIKit
 import FOBKit
+import Alamofire
 
 class PetListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // MARK:- IBOutlets
@@ -18,7 +19,10 @@ class PetListViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        FOBKit.fetchPets { [weak self] (pets) in
+            self?.pets = pets
+            self?.petsTableView.reloadData()
+        }
     }
     
     // MARK:- <UITableViewDataSource>
