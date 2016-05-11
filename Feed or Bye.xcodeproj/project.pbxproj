@@ -80,7 +80,7 @@
 		8D5008D71CD6AC77003B278A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D67AFAE1CD2402000476A7D /* Feed or Bye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Feed or Bye.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D67AFB11CD2402000476A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8D67AFB31CD2402000476A7D /* PetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetListViewController.swift; sourceTree = "<group>"; };
+		8D67AFB31CD2402000476A7D /* PetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PetListViewController.swift; path = Pets/List/PetListViewController.swift; sourceTree = "<group>"; };
 		8D67AFB61CD2402000476A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8D67AFB81CD2402000476A7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8D67AFBB1CD2402000476A7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		8D67AFD31CD2402000476A7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D67AFE41CD2434500476A7D /* PetDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PetDetailsViewController.swift; path = Pets/Details/PetDetailsViewController.swift; sourceTree = "<group>"; };
 		8DEDB7D41CD667E400C9188E /* PetList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PetList.storyboard; path = Pets/List/PetList.storyboard; sourceTree = "<group>"; };
-		8DEDB7D91CD66CBF00C9188E /* PetListItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetListItemTableViewCell.swift; sourceTree = "<group>"; };
+		8DEDB7D91CD66CBF00C9188E /* PetListItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PetListItemTableViewCell.swift; path = Pets/List/Cell/PetListItemTableViewCell.swift; sourceTree = "<group>"; };
 		8DF506231CE3625100A78825 /* PetFullnessTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PetFullnessTableViewCell.swift; path = Pets/Details/Cell/PetFullnessTableViewCell.swift; sourceTree = "<group>"; };
 		AF1F8EDA6FD72834FCB5C4CB /* Pods_Feed_or_Bye.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Feed_or_Bye.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6DE1DA9928A46C1546BF170 /* Pods-Feed Or Bye Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feed Or Bye Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Feed Or Bye Widget/Pods-Feed Or Bye Widget.release.xcconfig"; sourceTree = "<group>"; };
