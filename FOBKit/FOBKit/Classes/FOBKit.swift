@@ -31,6 +31,13 @@ public func fetchWatchingPets(callback:((Dictionary<String, FOBPet>?) -> Void)?)
     callback?(watchingPets)
 }
 
+public func isWatchingPet(pet:FOBPet?) -> Bool {
+    guard let pet = pet where watchingPets[pet.id] != nil else {
+        return false
+    }
+    return true
+}
+
 public func watchPet(pet:FOBPet?, observer:FOBPetFullnessObserver?) {
     guard let pet = pet else {
         return

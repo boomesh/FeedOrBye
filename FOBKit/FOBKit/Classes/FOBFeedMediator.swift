@@ -18,9 +18,8 @@ func feed(pet:FOBPet?) {
 }
 
 private func isAbleToFeed(pet:FOBPet?) -> Bool {
-    guard let pet = pet where 0.0 < pet.fullnessProgress && pet.fullnessProgress <= 100.0 else {
+    guard let pet = pet where 0.0 < pet.fullnessProgress && pet.fullnessProgress <= 1.0 else {
         return false
     }
-    
     return true
 }

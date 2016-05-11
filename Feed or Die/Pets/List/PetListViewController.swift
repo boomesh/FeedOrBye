@@ -8,7 +8,6 @@
 
 import UIKit
 import FOBKit
-import Alamofire
 
 class PetListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     // MARK:- IBOutlets

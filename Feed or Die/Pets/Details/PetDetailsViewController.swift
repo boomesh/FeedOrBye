@@ -11,7 +11,8 @@ import FOBKit
 
 class PetDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FOBPetFullnessObserver {
     
-    @IBOutlet weak var detailsTableView: UITableView!
+    @IBOutlet private weak var detailsTableView: UITableView!
+    @IBOutlet private weak var watchButton: UIBarButtonItem!
     
     var pet:FOBPet!
     
@@ -19,27 +20,27 @@ class PetDetailsViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.title = pet.name
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        FOBKit.watchPet(self.pet, observer: self)
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        FOBKit.unwatchPet(self.pet)
+        refreshWatchingState()
     }
     
     // MARK:- IBAction
     @IBAction func onFeedTouchUpInside(sender: AnyObject) {
-        print("why")
+        FOBKit.feedPet(pet)
     }
     
     @IBAction func onWatchTouchUpInside(sender: AnyObject) {
-        print("why")
+        if (FOBKit.isWatchingPet(pet)) {
+            FOBKit.unwatchPet(pet)
+        } else {
+            FOBKit.watchPet(pet, observer: self)
+        }
+        refreshWatchingState()
     }
     
+    // MARK:- private methods
+    private func refreshWatchingState() {
+        self.watchButton.title = FOBKit.isWatchingPet(pet) ? "Unwatch" : "Watch"
+    }
     
     // MARK:- <UITableViewDelegate>
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -118,7 +119,6 @@ class PetDetailsViewController: UIViewController, UITableViewDelegate, UITableVi
     func fullnessUpdated(pet: FOBPet!) {
         print("\(pet.name) fullness is \(pet.fullnessProgress)")
         self.detailsTableView.reloadData()
-        
     }
     
     func sayGoodbye(pet: FOBPet!) {

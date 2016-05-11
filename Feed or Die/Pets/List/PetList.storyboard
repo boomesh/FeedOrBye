@@ -198,6 +198,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="detailsTableView" destination="2BC-Kv-fyC" id="t25-iy-FCh"/>
+                        <outlet property="watchButton" destination="SmT-wx-LgU" id="Hc5-ik-ay5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yzm-5I-iwc" userLabel="First Responder" sceneMemberID="firstResponder"/>
