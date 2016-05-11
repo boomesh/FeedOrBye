@@ -8,6 +8,8 @@
 
 import Foundation
 
+private let starvationService:FOBStarvationService = FOBStarvationService()
+
 private let listOfPets: Array<FOBPet> = [
     FOBPet(name: "Dogface", breed: "German Dog"),
     FOBPet(name: "Catface", breed: "Siamese Dog"),
@@ -16,9 +18,34 @@ private let listOfPets: Array<FOBPet> = [
     FOBPet(name: "Gimpy1"),
     FOBPet(name: "Gimpy2"),
     FOBPet(name: "Gimpy3"),
-    FOBPet(name: "Gimpy4"),
+    FOBPet(name: "Gimpy4")
 ]
 
-public func fetchPets(callback:((pets:Array<FOBPet>) -> Void)?) {
+private var watchingPets:Dictionary<String, FOBPet> = Dictionary<String, FOBPet>()
+
+public func fetchAllPets(callback:((pets:Array<FOBPet>?) -> Void)?) {
     callback?(pets: listOfPets)
+}
+
+public func fetchWatchingPets(callback:((Dictionary<String, FOBPet>?) -> Void)?) {
+    callback?(watchingPets)
+}
+
+public func watchPet(pet:FOBPet?, observer:FOBPetFullnessObserver?) {
+    guard let pet = pet else {
+        return
+    }
+    
+    watchingPets[pet.id] = pet
+    starvationService.observer = observer
+    starvationService.beginStarvation(pet)
+}
+
+public func unwatchPet(pet:FOBPet?) {
+    guard let pet = pet else {
+        return
+    }
+    
+    watchingPets.removeValueForKey(pet.id)
+    starvationService.pauseStarvation(pet)
 }

@@ -9,15 +9,26 @@
 import UIKit
 import FOBKit
 
-class PetDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class PetDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FOBPetFullnessObserver {
     
     @IBOutlet weak var detailsTableView: UITableView!
     
     var pet:FOBPet!
     
+    // MARK:- Life Cycle
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.title = pet.name
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        FOBKit.watchPet(self.pet, observer: self)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        FOBKit.unwatchPet(self.pet)
     }
     
     // MARK:- <UITableViewDelegate>
@@ -84,5 +95,14 @@ class PetDetailsViewController: UIViewController, UITableViewDelegate, UITableVi
         default:
             return ""
         }
+    }
+    
+    // MARK:- <FOBPetFullnessObserver>
+    func fullnessUpdated(pet: FOBPet!) {
+        print("\(pet.name) fullness is \(pet.fullness)")
+    }
+    
+    func sayGoodbye(pet: FOBPet!) {
+        print("\(pet.name) has went to a farm...")
     }
 }

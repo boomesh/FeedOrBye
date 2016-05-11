@@ -19,7 +19,7 @@ class PetListViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        FOBKit.fetchPets { [weak self] (pets) in
+        FOBKit.fetchAllPets { [weak self] (pets) in
             self?.pets = pets
             self?.petsTableView.reloadData()
         }

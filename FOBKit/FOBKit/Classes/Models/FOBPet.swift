@@ -8,9 +8,18 @@
 
 import Foundation
 
-public class FOBPet {
-    public var name:String!
+public class FOBPet : Equatable {
+    public var id:String!
+    public var name:String! {
+        didSet {
+            // TODO: uniquely identify pets via some other attribute, not just name
+            self.id = self.name
+        }
+    }
+    
     public var breed:String!
+    
+    public var fullness:Double! = 100
     
     public var happy:Int!
     public var hair:Int!
@@ -23,6 +32,8 @@ public class FOBPet {
                 hair:Int? = 0,
                 hate:Int? = 0,
                 height:Int? = 0) {
+        // TODO: uniquely identify pets via some other attribute, not just name
+        self.id = name
         self.name = name
         self.breed = breed
         self.happy = happy
@@ -30,4 +41,8 @@ public class FOBPet {
         self.hate = hate
         self.height = height
     }
+}
+
+public func ==(lhs:FOBPet, rhs:FOBPet) -> Bool {
+    return lhs.id == rhs.id
 }
