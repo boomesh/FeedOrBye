@@ -25,6 +25,8 @@
 		8DEDB7DA1CD66CBF00C9188E /* PetListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEDB7D91CD66CBF00C9188E /* PetListItemTableViewCell.swift */; };
 		8DEDB7DB1CD66CBF00C9188E /* PetListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEDB7D91CD66CBF00C9188E /* PetListItemTableViewCell.swift */; };
 		8DEDB7DC1CD66CBF00C9188E /* PetListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DEDB7D91CD66CBF00C9188E /* PetListItemTableViewCell.swift */; };
+		8DF506241CE3625100A78825 /* PetFullnessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF506231CE3625100A78825 /* PetFullnessTableViewCell.swift */; };
+		8DF506251CE3625100A78825 /* PetFullnessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DF506231CE3625100A78825 /* PetFullnessTableViewCell.swift */; };
 		953B907BD67C9C0B0374A000 /* Pods_Feed_Or_Bye_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5EBDDEE06866C9FC59CF65 /* Pods_Feed_Or_Bye_Widget.framework */; };
 		A6254FB4B273263A59792D37 /* Pods_Feed_or_Bye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF1F8EDA6FD72834FCB5C4CB /* Pods_Feed_or_Bye.framework */; };
 /* End PBXBuildFile section */
@@ -92,6 +94,7 @@
 		8D67AFE41CD2434500476A7D /* PetDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PetDetailsViewController.swift; path = Pets/Details/PetDetailsViewController.swift; sourceTree = "<group>"; };
 		8DEDB7D41CD667E400C9188E /* PetList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PetList.storyboard; path = Pets/List/PetList.storyboard; sourceTree = "<group>"; };
 		8DEDB7D91CD66CBF00C9188E /* PetListItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetListItemTableViewCell.swift; sourceTree = "<group>"; };
+		8DF506231CE3625100A78825 /* PetFullnessTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PetFullnessTableViewCell.swift; path = Pets/Details/Cell/PetFullnessTableViewCell.swift; sourceTree = "<group>"; };
 		AF1F8EDA6FD72834FCB5C4CB /* Pods_Feed_or_Bye.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Feed_or_Bye.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6DE1DA9928A46C1546BF170 /* Pods-Feed Or Bye Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feed Or Bye Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Feed Or Bye Widget/Pods-Feed Or Bye Widget.release.xcconfig"; sourceTree = "<group>"; };
 		E9718A2C5199FFD9509FF58C /* Pods-Feed Or Bye Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feed Or Bye Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Feed Or Bye Widget/Pods-Feed Or Bye Widget.debug.xcconfig"; sourceTree = "<group>"; };
@@ -234,6 +237,7 @@
 		8D67AFE01CD242E700476A7D /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				8DF506221CE3621900A78825 /* Cell */,
 				8D67AFE41CD2434500476A7D /* PetDetailsViewController.swift */,
 			);
 			name = Details;
@@ -262,6 +266,14 @@
 			children = (
 			);
 			name = Base;
+			sourceTree = "<group>";
+		};
+		8DF506221CE3621900A78825 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8DF506231CE3625100A78825 /* PetFullnessTableViewCell.swift */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -529,6 +541,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D5008D31CD6AC77003B278A /* TodayViewController.swift in Sources */,
+				8DF506251CE3625100A78825 /* PetFullnessTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +553,7 @@
 				8D67AFB41CD2402000476A7D /* PetListViewController.swift in Sources */,
 				8D67AFE51CD2434500476A7D /* PetDetailsViewController.swift in Sources */,
 				8D67AFB21CD2402000476A7D /* AppDelegate.swift in Sources */,
+				8DF506241CE3625100A78825 /* PetFullnessTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,6 +741,7 @@
 				INFOPLIST_FILE = "Feed or Die/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.boomesh.Feed-or-Bye";
 				PRODUCT_NAME = "Feed or Bye";
 			};
@@ -741,6 +756,7 @@
 				INFOPLIST_FILE = "Feed or Die/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.boomesh.Feed-or-Bye";
 				PRODUCT_NAME = "Feed or Bye";
 			};

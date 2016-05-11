@@ -15,7 +15,7 @@ public protocol FOBPetFullnessObserver {
 
 class FOBStarvationService {
     
-    private let STARVATION_FACTOR:NSTimeInterval = 10.0
+    private let STARVATION_FACTOR:Float = 10.0
     
     private var currentPet:FOBPet? = FOBPet()
     private var currentTimer:NSTimer?;
@@ -54,13 +54,13 @@ class FOBStarvationService {
             return
         }
         
-        guard pet.fullness > 0 else {
+        guard pet.fullnessProgress > 0.0 else {
             pauseStarvation(pet)
             self.observer?.sayGoodbye(pet)
             return
         }
         
-        pet.fullness = pet.fullness - STARVATION_FACTOR
+        pet.subtractFullnessBy(STARVATION_FACTOR)
         self.observer?.fullnessUpdated(pet)
     }
 }

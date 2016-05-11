@@ -9,6 +9,8 @@
 import Foundation
 
 public class FOBPet : Equatable {
+    private let MAX_FULLNESS:Float! = 100.0
+    
     public var id:String!
     public var name:String! {
         didSet {
@@ -19,7 +21,16 @@ public class FOBPet : Equatable {
     
     public var breed:String!
     
-    public var fullness:Double! = 100
+    public var fullnessProgress:Float! {
+        get {
+            guard self.fullness >= 0.0 else {
+                return 0.0
+            }
+            return self.fullness / MAX_FULLNESS
+        }
+    }
+    
+    private var fullness:Float!
     
     public var happy:Int!
     public var hair:Int!
@@ -40,6 +51,14 @@ public class FOBPet : Equatable {
         self.hair = hair
         self.hate = hate
         self.height = height
+        self.fullness = MAX_FULLNESS
+    }
+    
+    public func subtractFullnessBy(subtractor:Float?) {
+        guard let subtractor = subtractor else {
+            return
+        }
+        self.fullness = self.fullness - subtractor
     }
 }
 

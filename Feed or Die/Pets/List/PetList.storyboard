@@ -115,7 +115,7 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="fullness" id="3YH-LC-uNv" userLabel="fullness">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="fullness" id="3YH-LC-uNv" userLabel="fullness" customClass="PetFullnessTableViewCell" customModule="Feed_or_Bye" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="49.5" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3YH-LC-uNv" id="YNq-Cc-e5Z">
@@ -132,6 +132,9 @@
                                                 <constraint firstItem="z6R-19-HAQ" firstAttribute="centerY" secondItem="YNq-Cc-e5Z" secondAttribute="centerY" id="yoS-H1-tKC"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="fullnessSlider" destination="z6R-19-HAQ" id="wHq-qE-zeD"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="info_detail" textLabel="KNY-0a-e51" detailTextLabel="bQh-eZ-19M" style="IBUITableViewCellStyleValue1" id="WLL-Uc-d5m">
                                         <rect key="frame" x="0.0" y="93.5" width="600" height="44"/>

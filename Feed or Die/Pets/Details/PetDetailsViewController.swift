@@ -50,7 +50,14 @@ class PetDetailsViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         switch (indexPath.row, indexPath.section) {
-        case (_,1):
+        case (0,0) :
+            guard let cell:PetFullnessTableViewCell = cell as? PetFullnessTableViewCell else {
+                return
+            }
+            
+            cell.setFullnessProgress(self.pet.fullnessProgress)
+            break;
+        case (0,1):
             cell.textLabel?.text = "Breed"
             cell.detailTextLabel?.text = pet.breed
             break;
@@ -99,7 +106,9 @@ class PetDetailsViewController: UIViewController, UITableViewDelegate, UITableVi
     
     // MARK:- <FOBPetFullnessObserver>
     func fullnessUpdated(pet: FOBPet!) {
-        print("\(pet.name) fullness is \(pet.fullness)")
+        print("\(pet.name) fullness is \(pet.fullnessProgress)")
+        self.detailsTableView.reloadData()
+        
     }
     
     func sayGoodbye(pet: FOBPet!) {
