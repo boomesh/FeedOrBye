@@ -31,6 +31,16 @@ class PetDetailsViewController: UIViewController, UITableViewDelegate, UITableVi
         FOBKit.unwatchPet(self.pet)
     }
     
+    // MARK:- IBAction
+    @IBAction func onFeedTouchUpInside(sender: AnyObject) {
+        print("why")
+    }
+    
+    @IBAction func onWatchTouchUpInside(sender: AnyObject) {
+        print("why")
+    }
+    
+    
     // MARK:- <UITableViewDelegate>
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
