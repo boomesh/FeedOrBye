@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show me something beautiful" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHQ-p2-jRu">
-                                <rect key="frame" x="126" y="284" width="348" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show me something beautiful" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHQ-p2-jRu">
+                                <rect key="frame" x="20" y="284" width="560" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -25,8 +25,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="uHQ-p2-jRu" secondAttribute="trailing" constant="20" id="JYb-8d-Egf"/>
                             <constraint firstItem="uHQ-p2-jRu" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Kph-go-Suu"/>
                             <constraint firstItem="uHQ-p2-jRu" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="WUP-YH-cdi"/>
+                            <constraint firstItem="uHQ-p2-jRu" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" id="x0u-7C-pgs"/>
                         </constraints>
                     </view>
                 </viewController>
