@@ -49,3 +49,7 @@ public func unwatchPet(pet:FOBPet?) {
     watchingPets.removeValueForKey(pet.id)
     starvationService.pauseStarvation(pet)
 }
+
+public func feedPet(pet:FOBPet?) {
+    feed(pet)
+}

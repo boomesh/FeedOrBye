@@ -54,11 +54,18 @@ public class FOBPet : Equatable {
         self.fullness = MAX_FULLNESS
     }
     
-    public func subtractFullnessBy(subtractor:Float?) {
-        guard let subtractor = subtractor else {
+    public func subtractFullnessBy(subtrahend:Float?) {
+        guard let subtrahend = subtrahend else {
             return
         }
-        self.fullness = self.fullness - subtractor
+        self.fullness = self.fullness - subtrahend
+    }
+    
+    public func addFullnessBy(addend:Float?) {
+        guard let addend = addend else {
+            return
+        }
+        self.fullness = self.fullness + addend
     }
 }
 
