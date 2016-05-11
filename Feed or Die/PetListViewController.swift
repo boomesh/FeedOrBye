@@ -50,6 +50,11 @@ class PetListViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+    //I don't know why I need to do this to deselect the row
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true);
+    }
+    
     // MARK:- <UIViewController> methods
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         guard let row:Int = self.petsTableView.indexPathForSelectedRow?.row else {
