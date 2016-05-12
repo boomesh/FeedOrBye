@@ -54,7 +54,7 @@ class FOBStarvationService {
             return
         }
         
-        guard pet.fullnessProgress > 0.0 else {
+        guard getFullnessProgress(pet) > 0.0 else {
             pauseStarvation(pet)
             self.observer?.sayGoodbye(pet)
             return

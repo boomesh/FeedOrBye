@@ -11,14 +11,14 @@ import Foundation
 private let starvationService:FOBStarvationService = FOBStarvationService()
 
 private let listOfPets: Array<FOBPet> = [
-    FOBPet(name: "Dogface", breed: "German Dog"),
-    FOBPet(name: "Catface", breed: "Siamese Dog"),
-    FOBPet(name: "Fishface", breed: "Aqua Dog"),
-    FOBPet(breed: "pure evil"),
-    FOBPet(name: "Gimpy1"),
-    FOBPet(name: "Gimpy2"),
-    FOBPet(name: "Gimpy3"),
-    FOBPet(name: "Gimpy4")
+    FOBPet(name: "Dogface", breed: "German Dog", fullness: MAX_FULLNESS),
+    FOBPet(name: "Catface", breed: "Siamese Dog", fullness: MAX_FULLNESS),
+    FOBPet(name: "Fishface", breed: "Aqua Dog", fullness: MAX_FULLNESS),
+    FOBPet(breed: "pure evil", fullness: MAX_FULLNESS),
+    FOBPet(name: "Gimpy1", fullness: MAX_FULLNESS),
+    FOBPet(name: "Gimpy2", fullness: MAX_FULLNESS),
+    FOBPet(name: "Gimpy3", fullness: MAX_FULLNESS),
+    FOBPet(name: "Gimpy4", fullness: MAX_FULLNESS)
 ]
 
 private var watchingPets:Dictionary<String, FOBPet> = Dictionary<String, FOBPet>()

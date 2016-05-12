@@ -13,6 +13,7 @@ class PetDetailsViewController: UIViewController, UITableViewDelegate, UITableVi
     
     @IBOutlet private weak var detailsTableView: UITableView!
     @IBOutlet private weak var watchButton: UIBarButtonItem!
+    @IBOutlet private weak var disabledView: UIView!
     
     var pet:FOBPet!
     
@@ -21,6 +22,7 @@ class PetDetailsViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewWillAppear(animated)
         self.title = pet.name
         refreshWatchingState()
+        refreshEnabledState()
     }
     
     // MARK:- IBAction
@@ -40,6 +42,13 @@ class PetDetailsViewController: UIViewController, UITableViewDelegate, UITableVi
     // MARK:- private methods
     private func refreshWatchingState() {
         self.watchButton.title = FOBKit.isWatchingPet(pet) ? "Unwatch" : "Watch"
+    }
+    
+    private func refreshEnabledState() {
+        let isEnabled:Bool = FOBKit.isAbleToFeed(self.pet);
+        self.watchButton.enabled = isEnabled
+        self.disabledView.hidden = isEnabled;
+        self.disabledView.alpha = isEnabled ? 0.0 : 1.0
     }
     
     // MARK:- <UITableViewDelegate>
@@ -66,7 +75,7 @@ class PetDetailsViewController: UIViewController, UITableViewDelegate, UITableVi
                 return
             }
             
-            cell.setFullnessProgress(self.pet.fullnessProgress)
+            cell.setFullnessProgress(FOBKit.getFullnessProgress(pet))
             break;
         case (0,1):
             cell.textLabel?.text = "Breed"
@@ -117,11 +126,13 @@ class PetDetailsViewController: UIViewController, UITableViewDelegate, UITableVi
     
     // MARK:- <FOBPetFullnessObserver>
     func fullnessUpdated(pet: FOBPet!) {
-        print("\(pet.name) fullness is \(pet.fullnessProgress)")
         self.detailsTableView.reloadData()
     }
     
     func sayGoodbye(pet: FOBPet!) {
-        print("\(pet.name) has went to a farm...")
+        UIView.animateWithDuration(0.3) {
+            [weak wself = self] in
+                wself?.refreshEnabledState()
+        }
     }
 }
