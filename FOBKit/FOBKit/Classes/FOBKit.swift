@@ -21,39 +21,40 @@ private let listOfPets: Array<FOBPet> = [
     FOBPet(name: "Gimpy4", fullness: MAX_FULLNESS)
 ]
 
-private var watchingPets:Dictionary<String, FOBPet> = Dictionary<String, FOBPet>()
+private var watchingPet:FOBPet?
 
 public func fetchAllPets(callback:((pets:Array<FOBPet>?) -> Void)?) {
     callback?(pets: listOfPets)
 }
 
-public func fetchWatchingPets(callback:((Dictionary<String, FOBPet>?) -> Void)?) {
-    callback?(watchingPets)
+public func fetchWatchingPets(callback:((FOBPet?) -> Void)?) {
+    callback?(watchingPet)
 }
 
 public func isWatchingPet(pet:FOBPet?) -> Bool {
-    guard let pet = pet where watchingPets[pet.id] != nil else {
+    guard let pet = pet where watchingPet == pet else {
         return false
     }
     return true
 }
 
 public func watchPet(pet:FOBPet?, observer:FOBPetFullnessObserver?) {
-    guard let pet = pet else {
+    guard let pet = pet where watchingPet != pet else {
         return
     }
     
-    watchingPets[pet.id] = pet
+    unwatchPet(watchingPet)
+    watchingPet = pet
     starvationService.observer = observer
     starvationService.beginStarvation(pet)
 }
 
 public func unwatchPet(pet:FOBPet?) {
-    guard let pet = pet else {
+    guard let pet = pet where watchingPet == pet else {
         return
     }
     
-    watchingPets.removeValueForKey(pet.id)
+    watchingPet = nil
     starvationService.pauseStarvation(pet)
 }
 

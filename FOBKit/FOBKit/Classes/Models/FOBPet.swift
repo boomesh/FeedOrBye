@@ -62,3 +62,7 @@ public class FOBPet : Equatable {
 public func ==(lhs:FOBPet, rhs:FOBPet) -> Bool {
     return lhs.id == rhs.id
 }
+
+public func !=(lhs:FOBPet, rhs:FOBPet) -> Bool {
+    return lhs.id != rhs.id
+}
