@@ -28,6 +28,7 @@ class PetDetailsViewController: UIViewController, UITableViewDelegate, UITableVi
     // MARK:- IBAction
     @IBAction func onFeedTouchUpInside(sender: AnyObject) {
         FOBKit.feedPet(pet)
+        self.detailsTableView.reloadData()
     }
     
     @IBAction func onWatchTouchUpInside(sender: AnyObject) {
