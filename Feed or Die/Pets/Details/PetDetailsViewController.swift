@@ -9,7 +9,7 @@
 import UIKit
 import FOBKit
 
-class PetDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, FOBPetFullnessObserver {
+class PetDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet private weak var detailsTableView: UITableView!
     @IBOutlet private weak var watchButton: UIBarButtonItem!
@@ -23,6 +23,12 @@ class PetDetailsViewController: UIViewController, UITableViewDelegate, UITableVi
         self.title = pet.name
         refreshWatchingState()
         refreshEnabledState()
+        subscribeToNotifications()
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        unsubscribeFromNotifications()
     }
     
     // MARK:- IBAction
@@ -35,7 +41,7 @@ class PetDetailsViewController: UIViewController, UITableViewDelegate, UITableVi
         if (FOBKit.isWatchingPet(pet)) {
             FOBKit.unwatchPet(pet)
         } else {
-            FOBKit.watchPet(pet, observer: self)
+            FOBKit.watchPet(pet)
         }
         refreshWatchingState()
     }
@@ -50,6 +56,22 @@ class PetDetailsViewController: UIViewController, UITableViewDelegate, UITableVi
         self.watchButton.enabled = isEnabled
         self.disabledView.hidden = isEnabled;
         self.disabledView.alpha = isEnabled ? 0.0 : 1.0
+    }
+    
+    private func subscribeToNotifications() {
+        NSNotificationCenter.defaultCenter().addObserverForName(FOBKit.kFullnessUpdatedNotification,
+                                                                object: nil,
+                                                                queue: nil,
+                                                                usingBlock: fullnessUpdated)
+        
+        NSNotificationCenter.defaultCenter().addObserverForName(FOBKit.kSayGoodbyeNotification,
+                                                                object: nil,
+                                                                queue: nil,
+                                                                usingBlock: sayGoodbye)
+    }
+    
+    private func unsubscribeFromNotifications() {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     // MARK:- <UITableViewDelegate>
@@ -125,15 +147,15 @@ class PetDetailsViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
-    // MARK:- <FOBPetFullnessObserver>
-    func fullnessUpdated(pet: FOBPet!) {
+    // MARK:- <NSNotificationCenter>
+    func fullnessUpdated(notification:NSNotification) {
         self.detailsTableView.reloadData()
     }
     
-    func sayGoodbye(pet: FOBPet!) {
+    func sayGoodbye(notification:NSNotification) {
         UIView.animateWithDuration(0.3) {
             [weak wself = self] in
-                wself?.refreshEnabledState()
+            wself?.refreshEnabledState()
         }
     }
 }

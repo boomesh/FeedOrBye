@@ -38,14 +38,13 @@ public func isWatchingPet(pet:FOBPet?) -> Bool {
     return true
 }
 
-public func watchPet(pet:FOBPet?, observer:FOBPetFullnessObserver?) {
+public func watchPet(pet:FOBPet?) {
     guard let pet = pet where watchingPet != pet else {
         return
     }
     
     unwatchPet(watchingPet)
     watchingPet = pet
-    starvationService.observer = observer
     starvationService.beginStarvation(pet)
 }
 

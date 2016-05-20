@@ -8,19 +8,12 @@
 
 import Foundation
 
-public protocol FOBPetFullnessObserver {
-    func fullnessUpdated(pet:FOBPet!)
-    func sayGoodbye(pet:FOBPet!)
-}
-
 class FOBStarvationService {
     
     private let STARVATION_FACTOR:Float = 10.0
     
     private var currentPet:FOBPet? = FOBPet()
     private var currentTimer:NSTimer?;
-    
-    var observer:FOBPetFullnessObserver?
     
     func beginStarvation(pet:FOBPet?) {
         guard let pet:FOBPet = pet where pet != self.currentPet else {
@@ -56,11 +49,11 @@ class FOBStarvationService {
         
         guard getFullnessProgress(pet) > 0.0 else {
             pauseStarvation(pet)
-            self.observer?.sayGoodbye(pet)
+            NSNotificationCenter.defaultCenter().postNotificationName(kSayGoodbyeNotification, object: pet)
             return
         }
         
         pet.subtractFullnessBy(STARVATION_FACTOR)
-        self.observer?.fullnessUpdated(pet)
+        NSNotificationCenter.defaultCenter().postNotificationName(kFullnessUpdatedNotification, object: pet)
     }
 }
