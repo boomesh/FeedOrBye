@@ -20,6 +20,8 @@ class FOBStarvationService {
             return
         }
         
+        pauseStarvation(pet)
+        
         let duration:NSTimeInterval = 2.0
         
         self.currentPet = pet
@@ -54,6 +56,7 @@ class FOBStarvationService {
         }
         
         pet.subtractFullnessBy(STARVATION_FACTOR)
+        FOBData.sharedInstance.updateWatchedPet(pet)
         NSNotificationCenter.defaultCenter().postNotificationName(kFullnessUpdatedNotification, object: pet)
     }
 }

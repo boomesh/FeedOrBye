@@ -8,12 +8,36 @@
 
 import UIKit
 import NotificationCenter
+import FOBKit
 
 class TodayViewController: UIViewController, NCWidgetProviding {
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view from its nib.
+
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        NSNotificationCenter.defaultCenter().addObserverForName(FOBKit.kFullnessUpdatedNotification,
+                                                                object: self,
+                                                                queue: nil,
+                                                                usingBlock: fullnessUpdated)
+        
+        NSNotificationCenter.defaultCenter().addObserverForName(FOBKit.kSayGoodbyeNotification,
+                                                                object: self,
+                                                                queue: nil,
+                                                                usingBlock: sayGoodbye)
+        
+        FOBKit.fetchWatchingPets { (pets:Array<FOBPet>?) in
+            print(pets)
+        }
+        
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     override func didReceiveMemoryWarning() {
@@ -23,12 +47,20 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
         // Perform any setup necessary in order to update the view.
-
+        
         // If an error is encountered, use NCUpdateResult.Failed
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
-
+        
         completionHandler(NCUpdateResult.NewData)
     }
     
+    // MARK:- <NSNotificationCenter>
+    func fullnessUpdated(notification:NSNotification) {
+        print("guh...")
+    }
+    
+    func sayGoodbye(notification:NSNotification) {
+        print("dead!")
+    }
 }

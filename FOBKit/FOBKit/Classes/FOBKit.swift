@@ -10,7 +10,12 @@ import Foundation
 
 private let starvationService:FOBStarvationService = FOBStarvationService()
 
-private let listOfPets: Array<FOBPet> = [
+private var watchingPet:FOBPet?
+
+private let dataLayer:FOBData = FOBData.sharedInstance;
+
+private let listOfPets: Array<FOBPet> =
+[
     FOBPet(name: "Dogface", breed: "German Dog", fullness: MAX_FULLNESS),
     FOBPet(name: "Catface", breed: "Siamese Dog", fullness: MAX_FULLNESS),
     FOBPet(name: "Fishface", breed: "Aqua Dog", fullness: MAX_FULLNESS),
@@ -21,40 +26,38 @@ private let listOfPets: Array<FOBPet> = [
     FOBPet(name: "Gimpy4", fullness: MAX_FULLNESS)
 ]
 
-private var watchingPet:FOBPet?
-
 public func fetchAllPets(callback:((pets:Array<FOBPet>?) -> Void)?) {
     callback?(pets: listOfPets)
 }
 
-public func fetchWatchingPets(callback:((FOBPet?) -> Void)?) {
-    callback?(watchingPet)
+public func fetchWatchingPets(callback:((Array<FOBPet>?) -> Void)?) {
+    callback?(dataLayer.getWatchedPets())
 }
 
 public func isWatchingPet(pet:FOBPet?) -> Bool {
-    guard let pet = pet where watchingPet == pet else {
+    guard let pet = pet where dataLayer.getWatchedPets()?.filter({$0 == pet}).count > 0 else {
         return false
     }
     return true
 }
 
 public func watchPet(pet:FOBPet?) {
-    guard let pet = pet where watchingPet != pet else {
+    guard let pet = pet where !isWatchingPet(pet) else {
         return
     }
     
     unwatchPet(watchingPet)
-    watchingPet = pet
+    dataLayer.putWatchedPet(pet)
     starvationService.beginStarvation(pet)
 }
 
 public func unwatchPet(pet:FOBPet?) {
-    guard let pet = pet where watchingPet == pet else {
+    guard let pet = pet where isWatchingPet(pet) else {
         return
     }
-    
-    watchingPet = nil
+
     starvationService.pauseStarvation(pet)
+    dataLayer.deleteWatchedPet(pet)
 }
 
 public func feedPet(pet:FOBPet?) {

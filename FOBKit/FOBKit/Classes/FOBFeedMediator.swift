@@ -19,11 +19,14 @@ public func getFullnessProgress(pet:FOBPet?) -> Float! {
     return pet.fullness / MAX_FULLNESS
 }
 
-func feed(pet:FOBPet?) {
+func feed(pet:FOBPet?, completion:((success:Bool) -> Void)? = nil) {
     guard let pet = pet where isAbleToFeed(pet) else {
+        completion?(success: false)
         return
     }
     pet.addFullnessBy(FEED_FACTOR)
+    FOBData.sharedInstance.updateWatchedPet(pet)
+    completion?(success: true)
 }
 
 public func isAbleToFeed(pet:FOBPet?) -> Bool {
