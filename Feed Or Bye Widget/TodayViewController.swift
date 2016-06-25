@@ -10,39 +10,23 @@ import UIKit
 import NotificationCenter
 import FOBKit
 
+
 class TodayViewController: UIViewController, NCWidgetProviding {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
+    private var pet:FOBPet?
+    
+    @IBOutlet weak var progressSlider: UISlider!
+    @IBOutlet weak var avatar: UIImageView!
+    @IBOutlet weak var name: UILabel!
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        NSNotificationCenter.defaultCenter().addObserverForName(FOBKit.kFullnessUpdatedNotification,
-                                                                object: self,
-                                                                queue: nil,
-                                                                usingBlock: fullnessUpdated)
         
-        NSNotificationCenter.defaultCenter().addObserverForName(FOBKit.kSayGoodbyeNotification,
-                                                                object: self,
-                                                                queue: nil,
-                                                                usingBlock: sayGoodbye)
-        
-        FOBKit.fetchWatchingPets { (pets:Array<FOBPet>?) in
-            print(pets)
+        FOBKit.fetchWatchingPets { [weak self](pets:Array<FOBPet>?) in
+            self?.pet = pets?.last
+            self?.configureWidgetForPet(self?.pet)
         }
         
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
@@ -52,15 +36,21 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
         
-        completionHandler(NCUpdateResult.NewData)
+        if ((self.pet) != nil) {
+            self.configureWidgetForPet(self.pet)
+            completionHandler(NCUpdateResult.NewData)
+        } else {
+            completionHandler(NCUpdateResult.NoData)
+        }
     }
     
-    // MARK:- <NSNotificationCenter>
-    func fullnessUpdated(notification:NSNotification) {
-        print("guh...")
-    }
-    
-    func sayGoodbye(notification:NSNotification) {
-        print("dead!")
+    // MARK:- Helper
+    func configureWidgetForPet(pet:FOBPet?) {
+        guard let pet:FOBPet = pet else {
+            return
+        }
+        
+        self.progressSlider.value =  FOBKit.getFullnessProgress(pet)
+        self.name.text = pet.name
     }
 }

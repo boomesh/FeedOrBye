@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Today View Controller-->
@@ -14,21 +16,36 @@
                         <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="37"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
-                                <rect key="frame" x="0.0" y="8" width="320" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="etj-Ea-85c">
+                                <rect key="frame" x="125" y="39" width="71" height="71"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="etj-Ea-85c" secondAttribute="height" multiplier="1:1" id="GyX-hY-y0K"/>
+                                    <constraint firstAttribute="width" constant="71" id="br5-w4-bwG"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8b9-cu-jdR">
+                                <rect key="frame" x="139" y="87" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Zu5-qI-JEK">
+                                <rect key="frame" x="22" y="8" width="276" height="31"/>
+                            </slider>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="GcN-lo-r42" secondAttribute="bottom" constant="8" id="Boo-7r-bFv"/>
-                            <constraint firstAttribute="trailing" secondItem="GcN-lo-r42" secondAttribute="trailing" id="TOt-Sd-eDW"/>
-                            <constraint firstItem="GcN-lo-r42" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="aOe-bZ-eGv"/>
-                            <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" id="r1F-QK-5Mr"/>
+                            <constraint firstItem="etj-Ea-85c" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="39" id="3xN-1b-fvt"/>
+                            <constraint firstItem="8b9-cu-jdR" firstAttribute="centerX" secondItem="etj-Ea-85c" secondAttribute="centerX" id="5SE-fQ-Z5H"/>
+                            <constraint firstItem="Zu5-qI-JEK" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" id="DJd-DT-LG7"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="etj-Ea-85c" secondAttribute="bottom" constant="38" id="Lse-8Q-fk9"/>
+                            <constraint firstItem="etj-Ea-85c" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="Zvr-PD-cXJ"/>
+                            <constraint firstItem="8b9-cu-jdR" firstAttribute="top" secondItem="etj-Ea-85c" secondAttribute="bottom" constant="-23" id="aCm-Nr-XP6"/>
+                            <constraint firstItem="Zu5-qI-JEK" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="cJH-uB-AXp"/>
+                            <constraint firstItem="Zu5-qI-JEK" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leadingMargin" constant="8" id="jhh-cH-ufd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zu5-qI-JEK" secondAttribute="trailing" constant="8" id="nLv-Rh-H1h"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -36,11 +53,19 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="37"/>
+                    <size key="freeformSize" width="320" height="148"/>
+                    <connections>
+                        <outlet property="avatar" destination="etj-Ea-85c" id="3PE-Ld-W6a"/>
+                        <outlet property="name" destination="8b9-cu-jdR" id="uvl-gR-BHP"/>
+                        <outlet property="progressSlider" destination="Zu5-qI-JEK" id="y2r-jO-CPc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-145" y="322.5"/>
+            <point key="canvasLocation" x="-206" y="320"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="avatar" width="35" height="35"/>
+    </resources>
 </document>

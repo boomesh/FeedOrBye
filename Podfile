@@ -10,7 +10,7 @@ end
 
 def ios_app_pods
 	common_pods
-    pod 'Alamofire'
+	pod 'Alamofire'
 end
 
 def ios_widget_pods
