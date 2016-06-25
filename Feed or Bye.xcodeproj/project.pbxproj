@@ -853,7 +853,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Feed or Bye.entitlements";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
-				INFOPLIST_FILE = "Feed or Die/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Feed or Die/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies";
@@ -869,7 +869,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Feed or Bye.entitlements";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
-				INFOPLIST_FILE = "Feed or Die/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Feed or Die/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -Xfrontend -debug-time-function-bodies";
@@ -883,7 +883,7 @@
 			baseConfigurationReference = 147C59395CDB58F051ECF130 /* Pods-Feed or Bye Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "Feed or DieTests/Info.plist";
+				INFOPLIST_FILE = "Feed or Bye Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.boomesh.Feed-or-DieTests";
 				PRODUCT_NAME = "Feed or Bye";
@@ -896,7 +896,7 @@
 			baseConfigurationReference = 8EF357470F3C766BF29DFA1C /* Pods-Feed or Bye Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = "Feed or DieTests/Info.plist";
+				INFOPLIST_FILE = "Feed or Bye Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.boomesh.Feed-or-DieTests";
 				PRODUCT_NAME = "Feed or Bye";
@@ -908,7 +908,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F4E1FA55E1EA8C87737EED7E /* Pods-Feed or Bye UITests.debug.xcconfig */;
 			buildSettings = {
-				INFOPLIST_FILE = "Feed or DieUITests/Info.plist";
+				INFOPLIST_FILE = "Feed or Bye UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.boomesh.Feed-or-DieUITests";
 				PRODUCT_NAME = "Feed or Bye";
@@ -920,7 +920,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5C1AF98F5D0A7A8FF8C15577 /* Pods-Feed or Bye UITests.release.xcconfig */;
 			buildSettings = {
-				INFOPLIST_FILE = "Feed or DieUITests/Info.plist";
+				INFOPLIST_FILE = "Feed or Bye UITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.boomesh.Feed-or-DieUITests";
 				PRODUCT_NAME = "Feed or Bye";

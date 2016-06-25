@@ -13,7 +13,7 @@ class FOBData {
     static let sharedInstance = FOBData()
     
     //expect to crash if shared defaults not configured properly
-    private let sharedDefaults:NSUserDefaults! = NSUserDefaults(suiteName: "group.boomesh.FeedOrByExtensionSharingDefaults")
+    private let sharedDefaults:NSUserDefaults! = NSUserDefaults(suiteName: "group.boomesh.FeedOrByeSharingDefaults")
     
     private let kWatchedPetsKey:String = "WATCHED_PETS_KEY"
     
