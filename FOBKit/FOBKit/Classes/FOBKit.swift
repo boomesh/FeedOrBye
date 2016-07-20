@@ -6,8 +6,6 @@
 //
 //
 
-import Foundation
-
 private let starvationService:FOBStarvationService = FOBStarvationService()
 
 private var watchingPet:FOBPet?
